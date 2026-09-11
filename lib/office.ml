@@ -1,3 +1,8 @@
+type first_or_second =
+  | First
+  | Second
+  | Neither
+
 type t =
   | OfficiumLectionis
   | LaudesMatutinas
@@ -6,5 +11,3 @@ type t =
   | Nonam
   | Vesperas
   | Completorium
-
-type kind = First | Second | Ordinary

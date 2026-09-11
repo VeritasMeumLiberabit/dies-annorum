@@ -3,4 +3,6 @@ field-space = loose
 break-separators = after
 space-around-lists = false
 dock-collection-brackets = false
-break-cases = fit
+break-cases = toplevel
+margin = 120
+type-decl = sparse

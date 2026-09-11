@@ -1,1 +1,8 @@
-type t = Gold | White | Red | Green | Violet | Rose | Black
+type t =
+  | Gold
+  | White
+  | Red
+  | Green
+  | Violet
+  | Rose
+  | Black

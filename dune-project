@@ -17,12 +17,15 @@
 
 (package
  (name dies-annorum)
- (synopsis "A short synopsis")
- (description "A longer description")
- (depends ocaml
+ (synopsis "Dies Annorum - A OCaml library for determining what liturgical celebrations are on a particular date in the Roman Rite.")
+ (description "This library takes a date and a location and lets you know what liturgical celebrations
+               occur on that date in the reformed calendar of the Roman Rite. The primary use case
+               as of now is for the offices of the Liturgy of the Hours. It may in future be expanded
+               to cover other liturgical celebrations.")
+ (depends (ocaml (>= 5.0))
           calendar
           (alcotest :with-test))
  (tags
-  ("add topics" "to describe" your project)))
+  (calendar liturgical roman-rite)))
 
 ; See the complete stanza docs at https://dune.readthedocs.io/en/stable/reference/dune-project/index.html
