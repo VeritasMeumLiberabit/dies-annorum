@@ -1,0 +1,4 @@
+(library
+  (name dies_annorum)
+  (modules_without_implementation language)
+  (libraries calendar))

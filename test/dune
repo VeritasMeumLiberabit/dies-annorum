@@ -1,0 +1,5 @@
+(test
+ (name test_dies_annorum)
+ (libraries dies_annorum
+            calendar
+            alcotest))
