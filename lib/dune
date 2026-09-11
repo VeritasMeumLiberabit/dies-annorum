@@ -1,3 +1,5 @@
 (library
  (name dies_annorum)
+ (public_name dies-annorum)
+ (modules color dates language office region rank season)
  (libraries calendar))

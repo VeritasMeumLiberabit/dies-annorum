@@ -1,35 +1,19 @@
 (** The module interface for formatting various bits of text in a language. *)
-module type Fmt = sig
-  (** [color color] Converts a color to a its name for the language.
-
-      @param color The color to convert
-      @return The name of the color in that language *)
+module type FMT = sig
+  (** [color color] Converts a color to a its name for the language. *)
   val color : Color.t -> string
 
-  (** [season_to_string season] Converts a season to its name for the language.
-
-      @param season The season to convert
-      @return The name of the season in that language *)
+  (** [season_to_string season] Converts a season to its name for the language. *)
   val season : Season.t -> string
 
-  (** [office_to_string ?kind office] Converts an office to a string for the language.
-
-      @param kind Some feasts have first and second Vespers and Compline. When that is the case, you specify it here.
-      @param office The office to convert.
-      @return The office name in that language
-      *)
+  (** [office_to_string ?kind office] Converts an office to a string for the language. *)
   val office : ?kind:Office.first_or_second -> Office.t -> string
 
-  (** [season_day_to_string season week day] Produces a string for the ferial
-
-      @param season The season
-      @param week The week that this season is in
-      @param day The day of the week
-      @return The *)
-  val season_day_to_string : Season.t -> int -> CalendarLib.Date.day -> string
+  (** [season_day_to_string season week day] Produces a string for the day assuming there is no feast day. *)
+  val season_day : Season.t -> int -> CalendarLib.Date.day -> string
 end
 
-module EnglishFmt : Fmt = struct
+module EnglishFmt : FMT = struct
   let color color =
     match color with
     | Color.Gold -> "Gold"
@@ -65,7 +49,7 @@ module EnglishFmt : Fmt = struct
     | Office.Completorium, Office.Second -> "Compline II"
     | Office.Completorium, Office.Neither -> "Compline"
 
-  let season_day_to_string season week day =
+  let season_day season week day =
     match season with
     | Season.TempusAdventus -> "Advent"
     | Season.TempusNativitatis -> "Christmas"
@@ -75,7 +59,7 @@ module EnglishFmt : Fmt = struct
     | Season.TriddumPaschale -> "Paschal Tridduum"
 end
 
-module LatinFmt : Fmt = struct
+module LatinFmt : FMT = struct
   let color color = "TODO -- Complete"
 
   let season season =
@@ -103,5 +87,5 @@ module LatinFmt : Fmt = struct
     | Office.Completorium, Second -> "Ad II Completorium"
     | Office.Completorium, Neither -> "Completorium"
 
-  let season_day_to_string season week day = "TODO -- Complete"
+  let season_day season week day = "TODO -- Complete"
 end

@@ -1,6 +1,7 @@
-(** The library *)
-module Language = Language
-module Dates = Dates
+(** {0 Module Dies_annorum}
+
+    This module is the public interface of the project
+  *)
 
 type celebration =
   { office : Office.t;
@@ -46,7 +47,7 @@ let easter_end office year =
 
 (** [get_celebrations formatter region office date]
     *)
-let get_celebrations (module L : Language.Fmt) region office date =
+let get_celebrations (module L : Language.FMT) region office date =
   let year = CalendarLib.Date.year date in
   (* The Advent Season.
    *

@@ -1,4 +1,4 @@
 (executable
  (public_name dies-annorum)
  (name main)
- (libraries dies_annorum))
+ (libraries dies-annorum))
