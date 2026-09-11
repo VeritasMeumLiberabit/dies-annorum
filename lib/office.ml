@@ -7,7 +7,4 @@ type t =
   | Vesperas
   | Completorium
 
-type kind =
-  | First
-  | Second
-  | Ordinary
+type kind = First | Second | Ordinary

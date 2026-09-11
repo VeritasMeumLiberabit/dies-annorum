@@ -1,7 +1,4 @@
-type feast = {
-  rank: Rank.t;
-
-}
+type feast = {rank : Rank.t}
 
 (*
 UNIVERSAL_FEASTS = {

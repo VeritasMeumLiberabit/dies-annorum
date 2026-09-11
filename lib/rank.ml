@@ -25,3 +25,29 @@ type t =
   | MemorialProperDiocease (* 3.11c *)
   | OptionalMemorial (* 3.12 *)
   | Ferial (* 3.13 *)
+
+let to_number rank =
+  match rank with
+  | Triduum -> 1.1
+  | Primary -> 1.2
+  | SolemnityGeneral -> 1.3
+  | SolemnityProperPatronal -> 1.4
+  | SolemnityProperDedication -> 1.4
+  | SolemnityProperParishSaint -> 1.4
+  | SolemnityProperOrderSaint -> 1.4
+  | FeastLordGeneral -> 2.5
+  | SundayUnprivilidged -> 2.6
+  | FeastGeneral -> 2.7
+  | FeastProperDioceasePatron -> 2.8
+  | FeastProperDedicationCathedral -> 2.8
+  | FeastProperTerratoryPatron -> 2.8
+  | FeastProperTitularSaint -> 2.8
+  | FeastProperIndividualChurch -> 2.8
+  | FeastProperOther -> 2.8
+  | FerialPrivileged -> 2.9
+  | MemorialGeneral -> 3.10
+  | MemorialProperSecondayPatron -> 3.11
+  | MemorialProperIndividualChurch -> 3.11
+  | MemorialProperDiocease -> 3.11
+  | OptionalMemorial -> 3.12
+  | Ferial -> 3.13
